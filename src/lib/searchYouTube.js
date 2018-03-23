@@ -1,10 +1,17 @@
 var searchYouTube = (options, callback) => {
-  $.ajax({
-    url: url,
-    data: data,
-    success: success,
-    dataType: dataType
-  });
+
+
+  $.get({
+    type: 'GET',
+    url:  "https://www.googleapis.com/youtube/v3/search",
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(data) {
+      console.log('error:' + data);
+    }
+
+  })
 };
 
 window.searchYouTube = searchYouTube;
