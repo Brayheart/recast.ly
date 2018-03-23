@@ -3,9 +3,14 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      videos = window.exampleVideoData,
-      video = window.exampleVideoData[0]
+      videos: window.exampleVideoData,
+      video: window.exampleVideoData[0]
     }
+    this.VideoEntryPlayerTitleClicked = this.VideoEntryPlayerTitleClicked.bind(this);
+  }
+
+  VideoEntryPlayerTitleClicked (event) {
+    this.setState({video: event});
   }
 
   render(){
@@ -21,7 +26,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.video} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.videos} />
+            <VideoList videos={this.state.videos} VideoEntryPlayerTitleClicked={this.VideoEntryPlayerTitleClicked} />
           </div>
         </div>
       </div>

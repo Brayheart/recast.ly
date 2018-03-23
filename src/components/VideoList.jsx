@@ -1,6 +1,6 @@
-var VideoList = ({videos}) => (
+var VideoList = ({ videos, VideoEntryPlayerTitleClicked}) => (
   <div className="video-list">
-    {videos.map((video) => <VideoListEntry video={video}/>)}
+    {videos.map((video) => <VideoListEntry video={video} VideoEntryPlayerTitleClicked={VideoEntryPlayerTitleClicked}/>)}
   </div>
 );
 
@@ -16,10 +16,8 @@ window.VideoList = VideoList;
 
 
 /*
-Why did this not work?
-
 video.map(function(video) {
-  <VideoListEntry video={video}/>
+  return <VideoListEntry video={video}/>
 })
 
 */
