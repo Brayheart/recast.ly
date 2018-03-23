@@ -1,5 +1,6 @@
-var VideoListEntry = () => (
+var VideoListEntry = ({video}) => (
   <div className="video-list-entry media">
+  {console.log('video', video)}
     <div className="media-left media-middle">
       <img className="media-object" src="https://i.ytimg.com/vi/1w8Z0UOXVaY/default.jpg" alt="" />
     </div>
